@@ -1,0 +1,54 @@
+@page
+@model SmartMatchLogger.Pages.Matches.IndexModel
+@{
+    ViewData["Title"] = "Match Log";
+}
+
+<h1>Match Log</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+
+<form method="get" asp-page="Details" onsubmit="return validateSelection();">
+    <div class="form-group">
+        <label for="matchSelect" class="form-label">Select a Match:</label>
+        <select id="matchSelect" name="id" class="form-control">
+            <option value="">-- Select a match --</option> 
+            @foreach (var item in Model.Match.OrderByDescending(m => m.Date))
+            {
+                <option value="@item.Id">
+                    @item.Date.ToString("MMM dd yyyy") vs @item.Opponent @(item.Winner ? "(W)" : "(L)")
+                </option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">View Match Details</button>
+</form>
+
+@section Scripts {
+    <script>
+        function validateSelection() {
+            const matchSelect = document.getElementById("matchSelect");
+            const alertBox = document.getElementById("matchAlert");
+
+            if (matchSelect.value === "") {
+                alertBox.style.display = "block"; // show the alert
+                return false; // block form submission
+            }
+
+            return true;
+        }
+
+        function dismissAlert() {
+            document.getElementById("matchAlert").style.display = "none";
+        }
+    </script>
+}
+
+
+<div id="matchAlert" class="alert alert-warning alert-dismissible fade show" style="display:none; position: fixed; top: 20px; right: 20px; z-index: 9999;" role="alert">
+    Please select a match before continuing.
+    <button type="button" class="btn-close" aria-label="Close" onclick="dismissAlert()"></button>
+</div>

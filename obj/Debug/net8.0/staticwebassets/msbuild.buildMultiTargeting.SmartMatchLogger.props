@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/SmartMatchLogger.props" />
+</Project>

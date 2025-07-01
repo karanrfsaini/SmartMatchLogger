@@ -1,0 +1,63 @@
+@page
+@model SmartMatchLogger.Pages.Matches.DetailsModel
+@{
+    ViewData["Title"] = "Match Details";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">Match Details</h1>
+
+    <div class="row">
+        <!-- Left Column: Match Info -->
+        <div class="col-md-6">
+            <dl class="row">
+                <dt class="col-sm-4">Date</dt>
+                <dd class="col-sm-8">@Model.Match.Date.ToString("MMMM d, yyyy")</dd>
+
+                <dt class="col-sm-4">Opponent</dt>
+                <dd class="col-sm-8">@Model.Match.Opponent</dd>
+
+                <dt class="col-sm-4">Winner</dt>
+                <dd class="col-sm-8">@(Model.Match.Winner ? "Karan" : Model.Match.Opponent)</dd>
+
+                <dt class="col-sm-4">PlayStyle</dt>
+                <dd class="col-sm-8">@Model.Match.PlayStyle</dd>
+
+                <dt class="col-sm-4">Location</dt>
+                <dd class="col-sm-8">@Model.Match.Location</dd>
+
+                <dt class="col-sm-4">Surface</dt>
+                <dd class="col-sm-8">@Model.Match.Surface</dd>
+
+                <dt class="col-sm-4">Score</dt>
+                <dd class="col-sm-8">@Model.Match.Score</dd>
+
+                <dt class="col-sm-4">Match Notes</dt>
+                <dd class="col-sm-8">@Model.Match.MatchNotes</dd>
+
+                <dt class="col-sm-4">Fatigue</dt>
+                <dd class="col-sm-8">@Model.Match.FatigueLevel / 5</dd>
+            </dl>
+        </div>
+
+        <!-- Right Column: Shot Ratings -->
+        <div class="col-md-6">
+            <div class="card border-secondary">
+                <div class="card-header bg-secondary text-white">
+                    Shot Ratings (1–5)
+                </div>
+                <div class="card-body">
+                    <p><strong>Forehand:</strong> @Model.Match.ForehandRating</p>
+                    <p><strong>Backhand:</strong> @Model.Match.BackhandRating</p>
+                    <p><strong>Serve:</strong> @Model.Match.ServeRating</p>
+                    <p><strong>Volley:</strong> @Model.Match.VolleyRating</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-page="./Edit" asp-route-id="@Model.Match.Id" class="btn btn-primary me-2">Edit</a>
+        <a asp-page="./Index" class="btn btn-outline-secondary">Back to Match Log</a>
+    </div>
+</div>

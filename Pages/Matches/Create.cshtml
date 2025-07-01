@@ -1,0 +1,105 @@
+@page
+@model SmartMatchLogger.Pages.Matches.CreateModel
+
+        @{
+        ViewData["Title"] = "Create";
+        }
+        
+        <h1>Create</h1>
+        
+    <h4>Match</h4>
+    <hr />
+    <div class="row">
+    <div class="col-md-4">
+    <form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Match.Date" class="control-label"></label>
+                <input asp-for="Match.Date" class="form-control" />
+                <span asp-validation-for="Match.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Match.Opponent" class="control-label"></label>
+                <input asp-for="Match.Opponent" class="form-control" />
+                <span asp-validation-for="Match.Opponent" class="text-danger"></span>
+            </div>
+            <div class="form-check">
+                <input asp-for="Match.Winner" class="form-check-input" type="checkbox" />
+                <label asp-for="Match.Winner" class="form-check-label">Did you win the match?</label>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Match.PlayStyle" class="control-label"></label>
+                <select asp-for="Match.PlayStyle" class="form-control">
+                    <option value="Offensive Baseliner">Offensive Baseliner</option>
+                    <option value="Counter Puncher">Counter Puncher</option>
+                    <option value="Serve and Volleyer">Serve and Volleyer</option>
+                    <option value="All Court">All Court</option>
+                </select>
+                <span asp-validation-for="Match.PlayStyle" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Match.Location" class="control-label"></label>
+                <input asp-for="Match.Location" class="form-control" />
+                <span asp-validation-for="Match.Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Match.Surface" class="control-label"></label>
+                <select asp-for="Match.Surface" class="form-control">
+                    <option value="Hard Court" selected>Hard Court</option>
+                    <option value="Clay">Clay</option>
+                    <option value="Grass">Grass</option>
+                </select>
+                <span asp-validation-for="Match.Surface" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Match.Score" class="control-label"></label>
+                <input asp-for="Match.Score" class="form-control" />
+                <span asp-validation-for="Match.Score" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Match.MatchNotes" class="control-label"></label>
+                <input asp-for="Match.MatchNotes" class="form-control" />
+                <span asp-validation-for="Match.MatchNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Match.FatigueLevel" class="control-label"></label>
+                <input asp-for="Match.FatigueLevel" type="range" min="1" max="5" class="form-range" />
+                <span asp-validation-for="Match.FatigueLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Match.ForehandRating" class="control-label"></label>
+                <input asp-for="Match.ForehandRating" type="range" min="1" max="5" class="form-range" />
+                <span asp-validation-for="Match.ForehandRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Match.BackhandRating" class="control-label"></label>
+                <input asp-for="Match.BackhandRating" type="range" min="1" max="5" class="form-range" />
+                <span asp-validation-for="Match.BackhandRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Match.ServeRating" class="control-label"></label>
+                <input asp-for="Match.ServeRating" type="range" min="1" max="5" class="form-range" />
+                <span asp-validation-for="Match.ServeRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Match.VolleyRating" class="control-label"></label>
+                <input asp-for="Match.VolleyRating" type="range" min="1" max="5" class="form-range" />
+                <span asp-validation-for="Match.VolleyRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
