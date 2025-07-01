@@ -20,3 +20,23 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+.tennis-ball {
+  position: fixed;
+  top: 50vh;
+  left: -80px;
+  font-size: 10.0rem;
+  z-index: 9999;
+  animation: fly-across 0.75s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes fly-across {
+  0% {
+      transform: translateX(0) rotate(0deg);
+  }
+  100% {
+      transform: translateX(110vw) rotate(720deg);
+  }
+}

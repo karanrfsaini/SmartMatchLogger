@@ -4,6 +4,9 @@
     ViewData["Title"] = "Welcome to SmartMatchLogger";
 }
 
+<div class="tennis-ball" id="tennisBall">🎾</div>
+
+
 <style>
     body {
         background-color: #121212;
@@ -71,6 +74,8 @@
     }
 </style>
 
+
+
 <div class="hero">
     <h1>SmartMatchLogger 🎾</h1>
     <p class="tagline">Log smarter. Analyze better. Play your best tennis.</p>
@@ -80,11 +85,17 @@
         <a asp-page="/Matches/Index">View Match Log</a>
     </div>
 
-    <div class="highlight-card">
-        <h4>📊 Last Match Summary</h4>
-        <p>Opponent: Alex</p>
-        <p>Result: Win</p>
-        <p>Surface: Hard Court</p>
-        <p>Forehand: 4/5 | Backhand: 3/5 | Serve: 5/5 | Volley: 2/5</p>
-    </div>
 </div>
+
+@section Scripts {
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const ball = document.getElementById('tennisBall');
+                if (ball) {
+                    ball.style.display = 'none';
+                }
+            }, 2500);
+        });
+    </script>
+}

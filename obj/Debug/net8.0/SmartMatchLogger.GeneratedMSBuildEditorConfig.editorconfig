@@ -26,10 +26,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
