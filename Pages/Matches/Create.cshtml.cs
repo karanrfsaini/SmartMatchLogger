@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SmartMatchLogger.Data;
 using SmartMatchLogger.Models;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace SmartMatchLogger.Pages.Matches
 {
@@ -19,26 +21,24 @@ namespace SmartMatchLogger.Pages.Matches
             _context = context;
         }
 
-        public IActionResult OnGet()
-        {
-            return Page();
-        }
 
         [BindProperty]
         public Match Match { get; set; } = default!;
 
         // For more information, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            // Load distinct opponent names from existing matches
+            var opponentNames = await _context.Match
+                .Select(m => m.Opponent)
+                .Distinct()
+                .OrderBy(name => name)
+                .ToListAsync();
 
-            _context.Match.Add(Match);
-            await _context.SaveChangesAsync();
+            ViewData["OpponentNames"] = opponentNames;
 
-            return RedirectToPage("./Index");
+            return Page();
         }
+
     }
 }

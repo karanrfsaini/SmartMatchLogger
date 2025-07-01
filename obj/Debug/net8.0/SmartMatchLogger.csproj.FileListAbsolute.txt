@@ -302,3 +302,4 @@
 /Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/SmartMatchLogger.pdb
 /Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/SmartMatchLogger.genruntimeconfig.cache
 /Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/ref/SmartMatchLogger.dll
+/Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/SmartMatchLogger.sourcelink.json

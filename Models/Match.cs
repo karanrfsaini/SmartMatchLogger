@@ -13,13 +13,17 @@ namespace SmartMatchLogger.Models
         [Required]
         public string Opponent { get; set; }
 
+        [Required]
         public bool Winner { get; set;}
         public string PlayStyle {get; set;}
 
+        [Required]
         public string Location { get; set; }
+        [Required]
         public string Surface { get; set; }
+        [Required]
         public string Score { get; set; }
-
+        [Required]
         public string MatchNotes { get; set; }
 
         public int FatigueLevel { get; set; }  // 1-5 all of these
