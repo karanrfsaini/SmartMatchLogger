@@ -6,7 +6,12 @@
         }
         
         <h1>Add New Match</h1>
-        
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">Please correct the errors in the form before saving.</div>
+        }
+        <div asp-validation-summary="All" class="text-danger"></div>
+
     <hr />
     <div class="row">
     <div class="col-md-12">
@@ -18,9 +23,15 @@
                 <label asp-for="Match.Opponent" class="control-label"></label>
                 <input asp-for="Match.Opponent" class="form-control" list="opponentList" />
                 <datalist id="opponentList">
-                    @foreach (var name in ViewData["OpponentNames"] as List<string>)
-                    {
-                        <option value="@name" />
+                    @{
+                        var opponentNames = ViewData["OpponentNames"] as List<string>;
+                        if (opponentNames != null && opponentNames.Any())
+                        {
+                            foreach (var name in opponentNames)
+                            {
+                                <option value="@name" />
+                            }
+                        }
                     }
                 </datalist>
                 <span asp-validation-for="Match.Opponent" class="text-danger"></span>
@@ -43,6 +54,18 @@
                     <option value="ServeAndVolleyer">Serve and Volleyer</option>
                     <option value="AllCourt">All Court</option>
                 </select>
+            </div>
+
+            <div class="form-group">
+                    <label asp-for="Match.Location" class="control-label"></label>
+                    <input asp-for="Match.Location" class="form-control" />
+                    <span asp-validation-for="Match.Location" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                    <label asp-for="Match.Score" class="control-label"></label>
+                    <input asp-for="Match.Score" class="form-control" />
+                    <span asp-validation-for="Match.Score" class="text-danger"></span>
             </div>
 
             <div class="form-group">

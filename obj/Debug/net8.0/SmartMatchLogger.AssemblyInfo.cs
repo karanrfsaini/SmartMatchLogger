@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartMatchLogger")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b56f9514a429830fff6cb403e33d62442f88297")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3efaa826ad2bce2803e6c01de4eaa86b7a7bb399")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartMatchLogger")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartMatchLogger")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -39,6 +39,18 @@ namespace SmartMatchLogger.Pages.Matches
 
             return Page();
         }
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            _context.Match.Add(Match);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("./Index");
+        }
 
     }
 }
