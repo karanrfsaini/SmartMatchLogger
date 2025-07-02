@@ -7,7 +7,6 @@ namespace SmartMatchLogger.Models
     {
         public int Id { get; set; }
 
-        [Required]
         public DateTime Date { get; set; }
 
         [Required]
@@ -17,13 +16,11 @@ namespace SmartMatchLogger.Models
         public bool Winner { get; set;}
         public string PlayStyle {get; set;}
 
-        [Required]
         public string Location { get; set; }
-        [Required]
         public string Surface { get; set; }
         [Required]
         public string Score { get; set; }
-        [Required]
+
         public string MatchNotes { get; set; }
 
         public int FatigueLevel { get; set; }  // 1-5 all of these

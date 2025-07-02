@@ -1,0 +1,21 @@
+﻿@page
+@model SmartMatchLogger.Pages.UploadModel
+@{
+    ViewData["Title"] = "Upload Data";
+}
+
+<h1>Upload Match Data</h1>
+<p>Upload a CSV file containing your match history. We'll help you log it into the SmartMatchLogger system.</p>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="csvFile">Choose CSV File</label>
+        <input type="file" name="CsvFile" accept=".csv" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Upload</button>
+</form>
+
+@if (Model.Message != null)
+{
+    <div class="alert alert-info mt-3">@Model.Message</div>
+}

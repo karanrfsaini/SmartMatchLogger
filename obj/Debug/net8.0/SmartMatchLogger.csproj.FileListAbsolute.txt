@@ -286,6 +286,7 @@
 /Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/SmartMatchLogger.MvcApplicationPartsAssemblyInfo.cache
 /Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/SmartMatchLogger.RazorAssemblyInfo.cache
 /Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/SmartMatchLogger.RazorAssemblyInfo.cs
+/Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/SmartMatchLogger.sourcelink.json
 /Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/staticwebassets.build.json
 /Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/staticwebassets.development.json
 /Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/staticwebassets/msbuild.SmartMatchLogger.Microsoft.AspNetCore.StaticWebAssets.props
@@ -302,4 +303,3 @@
 /Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/SmartMatchLogger.pdb
 /Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/SmartMatchLogger.genruntimeconfig.cache
 /Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/ref/SmartMatchLogger.dll
-/Users/karan/Desktop/Projects/SmartMatchLoggerProject/SmartMatchLogger/obj/Debug/net8.0/SmartMatchLogger.sourcelink.json
