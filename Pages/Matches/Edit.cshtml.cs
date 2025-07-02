@@ -73,5 +73,23 @@ namespace SmartMatchLogger.Pages.Matches
         {
             return _context.Match.Any(e => e.Id == id);
         }
+        public async Task<IActionResult> OnPostDeleteAsync()
+        {
+            if (Match == null || Match.Id == 0)
+            {
+                return NotFound();
+            }
+
+            var match = await _context.Match.FindAsync(Match.Id);
+
+            if (match != null)
+            {
+                _context.Match.Remove(match);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToPage("./Index");
+        }
+
     }
 }
