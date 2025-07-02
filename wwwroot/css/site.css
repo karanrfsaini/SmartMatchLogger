@@ -40,3 +40,71 @@ body {
       transform: translateX(110vw) rotate(720deg);
   }
 }
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Form backgrounds and inputs */
+input, select, textarea {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #aaa;
+}
+
+label {
+  color: #cccccc;
+}
+
+.form-control:focus {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-color: #00ff88;
+  box-shadow: 0 0 0 0.15rem rgba(0, 255, 136, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #00ff88;
+  border-color: #00ff88;
+  color: #121212;
+}
+
+.btn-primary:hover {
+  background-color: #00cc66;
+  border-color: #00cc66;
+  color: #ffffff;
+}
+
+.btn-outline-secondary {
+  border-color: #888;
+  color: #ccc;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Tables */
+table {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+th, td {
+  border-color: #333;
+}
+
+/* Cards */
+.card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
