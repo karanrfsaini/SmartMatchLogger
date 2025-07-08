@@ -25,5 +25,18 @@ namespace SmartMatchLogger.Pages.Matches
         {
             Match = await _context.Match.ToListAsync();
         }
+        public async Task<IActionResult> OnPostDeleteAllAsync()
+        {
+            var allMatches = await _context.Match.ToListAsync();
+            if (allMatches.Count > 0)
+            {
+                _context.Match.RemoveRange(allMatches);
+                await _context.SaveChangesAsync();
+            }
+
+            TempData["DeleteAllMessage"] = $"Deleted {allMatches.Count} matches.";
+            return RedirectToPage(); // reload Index
+        }
+
     }
 }
