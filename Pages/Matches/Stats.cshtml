@@ -1,0 +1,84 @@
+﻿@page
+@model SmartMatchLogger.Pages.StatsModel
+@{
+    ViewData["Title"] = "Stats";
+}
+
+<h1>Stroke Rating Over Time</h1>
+
+<form method="get" class="mb-4">
+    <label>Choose strokes to compare:</label>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="SelectedStrokes" value="Forehand"
+               @(Model.SelectedStrokes.Contains("Forehand") ? "checked" : "") onchange="this.form.submit()" />
+        <label class="form-check-label">Forehand</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="SelectedStrokes" value="Backhand"
+               @(Model.SelectedStrokes.Contains("Backhand") ? "checked" : "") onchange="this.form.submit()" />
+        <label class="form-check-label">Backhand</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="SelectedStrokes" value="Serve"
+               @(Model.SelectedStrokes.Contains("Serve") ? "checked" : "") onchange="this.form.submit()" />
+        <label class="form-check-label">Serve</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="SelectedStrokes" value="Volley"
+               @(Model.SelectedStrokes.Contains("Volley") ? "checked" : "") onchange="this.form.submit()" />
+        <label class="form-check-label">Volley</label>
+    </div>
+</form>
+
+
+
+
+
+@if (Model.DataPoints.Any())
+{
+    <canvas id="strokeChart" width="800" height="400"></canvas>
+}
+
+<canvas id="strokeChart" width="800" height="400"></canvas>
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const labels = @Html.Raw(Json.Serialize(Model.Labels));
+        const allData = @Html.Raw(Json.Serialize(Model.AllStrokeData));
+
+        const colors = {
+            Forehand: 'rgb(255, 99, 132)',
+            Backhand: 'rgb(54, 162, 235)',
+            Serve: 'rgb(255, 206, 86)',
+            Volley: 'rgb(75, 192, 192)'
+        };
+
+        const datasets = Object.keys(allData).map(key => ({
+            label: key,
+            data: allData[key],
+            borderColor: colors[key],
+            fill: false,
+            tension: 0.1
+        }));
+
+        new Chart(document.getElementById('strokeChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: datasets
+            },
+            options: {
+                scales: {
+                    y: {
+                        min: 1,
+                        max: 10,
+                        ticks: { stepSize: 1 }
+                    }
+                },
+                plugins: {
+                    legend: { display: true }
+                }
+            }
+        });
+    </script>
+}
