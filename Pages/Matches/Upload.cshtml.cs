@@ -17,9 +17,9 @@ namespace SmartMatchLogger.Pages
         }
 
         [BindProperty]
-        public IFormFile CsvFile { get; set; }
+        public IFormFile? CsvFile { get; set; }
 
-        public string Message { get; set; }
+        public string? Message { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
