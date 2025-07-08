@@ -1,0 +1,39 @@
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider and VS Code settings
+.idea/
+.vscode/
+.vs/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# ASP.NET secrets
+secrets.json
+
+# SQLite and test DBs
+*.db
+*.sqlite
+*.mdf
+*.ldf
+
+# Published output
+publish/
+wwwroot/lib/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
