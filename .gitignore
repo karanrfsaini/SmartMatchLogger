@@ -43,3 +43,10 @@ wwwroot/lib/
 *.pdb
 *.cache
 *.json
+bin/
+obj/
+*.dll
+*.pdb
+*.cache
+*.json
+*.editorconfig
