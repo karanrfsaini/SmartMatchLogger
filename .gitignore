@@ -1,6 +1,6 @@
 # Ignore build outputs
-bin/
-obj/
+/bin/
+/obj/
 
 # Ignore user-specific files
 *.user
@@ -37,3 +37,9 @@ wwwroot/lib/
 *.tmp
 *.bak
 *.swp
+/bin/
+/obj/
+*.dll
+*.pdb
+*.cache
+*.json
