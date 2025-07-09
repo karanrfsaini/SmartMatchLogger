@@ -37,3 +37,11 @@ wwwroot/lib/
 *.tmp
 *.bak
 *.swp
+
+bin/
+obj/
+*.dll
+*.pdb
+*.cache
+*.editorconfig
+*.json
