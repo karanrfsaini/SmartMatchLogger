@@ -50,3 +50,10 @@ obj/
 *.cache
 *.json
 *.editorconfig
+bin/
+obj/
+*.dll
+*.pdb
+*.cache
+*.json
+*.editorconfig
